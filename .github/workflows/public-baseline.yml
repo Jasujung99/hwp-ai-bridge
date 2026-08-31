@@ -1,0 +1,35 @@
+name: Public baseline
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate repository
+        run: python scripts/validate_repository.py
+
+      - name: Validate integration examples with PowerShell
+        shell: pwsh
+        run: ./scripts/Test-IntegrationExamples.ps1
+
+      - name: Check whitespace errors
+        shell: pwsh
+        run: git diff --check HEAD~1 HEAD

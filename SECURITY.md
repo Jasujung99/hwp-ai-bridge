@@ -12,8 +12,9 @@ HWP AI Bridge와 연결 엔진은 사용자의 한글 문서와 로컬 프로필
 
 ## 안전한 신고
 
-공개 저장소가 만들어진 뒤에는 저장소 소유자가 지정한 비공개 연락처로 최소 재현 절차를
-보내 주세요. 그 전에는 실제 비밀값을 포함하지 않은 재현 자료만 공유하세요.
+[GitHub의 비공개 보안 신고](https://github.com/Jasujung99/hwp-ai-bridge/security/advisories/new)로
+최소 재현 절차를 보내 주세요. 공개 Issue나 Discussion에는 취약점 세부 사항, 실제
+비밀값, 문서 본문, 개인 경로를 올리지 마세요.
 
 ## 기본 원칙
 

@@ -19,11 +19,13 @@
 
 ## 3. 이 허브 공개
 
-- [ ] 두 엔진의 공개 URL과 버전 호환표를 추가
+- [x] 두 엔진의 공개 URL과 버전 호환표 형식을 추가
 - [ ] Codex·Claude Code·Cursor·Grok Build 예제를 각각 확인
 - [ ] 예제에서 토큰·개인 경로·프로필·사용자 이름이 없는지 검사
 - [ ] 직접·안전·혼합 모드의 실제 범위를 명확히 표시
-- [ ] `scripts/Test-IntegrationExamples.ps1`와 `git diff --check` 통과
+- [ ] `python scripts/validate_repository.py`, `scripts/Test-IntegrationExamples.ps1`, `git diff --check` 통과
+- [ ] GitHub Discussions와 private vulnerability reporting 활성화
+- [ ] `main` 브랜치 규칙과 필수 `Public baseline / validate` 검사 적용
 
 ## 4. 공용 라우터·설치기 (후속)
 
@@ -32,3 +34,5 @@
 - [ ] 승인된 변경 계획만 전달하는 정책 구현
 - [ ] 설치기의 설정 백업·병합·되돌리기 설계
 - [ ] 복수 AI 클라이언트 동시 사용 시나리오 검증
+
+상세 종료 조건은 [ROADMAP](../ROADMAP.md)과 [마일스톤](milestones.md)을 따릅니다.

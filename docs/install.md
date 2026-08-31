@@ -24,14 +24,16 @@ hwpctl status
 공개 패키지 릴리스 전에는 `pipx install`이나 `uv tool install` 명령을 배포용 설치법으로
 안내하지 않습니다. 태그된 릴리스와 설치 경로가 준비된 뒤에만 추가합니다.
 
-## 안전 모드 개발용 설치
+## 안전 모드 저장소 설치
 
-`hwp-live-safe`는 아직 공개 패키지 릴리스 전입니다. 저장소 체크아웃에서만 다음과 같이
-실행합니다.
+`hwp-live-safe`는 아직 공개 패키지 릴리스 전입니다. 공개 저장소 체크아웃의 독립
+가상환경에서 실행합니다.
 
 ```powershell
+git clone https://github.com/Jasujung99/hwp-live-safe.git
+Set-Location hwp-live-safe
 uv sync --extra dev
-.\.venv\Scripts\hwp-live-safe.exe
+uv run hwp-live-safe
 ```
 
 첫 공개 릴리스 이후 권장 설치는 다음처럼 PATH에 명령을 설치하는 방식입니다.
@@ -41,7 +43,7 @@ uv tool install hwp-live-safe
 hwp-live-safe
 ```
 
-이 명령은 안전 모드 저장소와 패키지가 실제로 공개된 뒤에만 사용하세요.
+이 명령은 태그된 패키지 릴리스가 실제로 공개된 뒤에만 사용하세요.
 
 ## 둘 다 설치하기
 

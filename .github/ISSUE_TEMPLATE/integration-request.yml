@@ -1,0 +1,50 @@
+name: 클라이언트 연결 제안
+description: 새 AI 클라이언트 또는 기존 MCP 설정 예제 개선을 제안합니다.
+title: "[Integration] "
+labels:
+  - "integration"
+body:
+  - type: input
+    id: client
+    attributes:
+      label: AI 클라이언트와 버전
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: 대상 모드
+      options:
+        - 직접 모드
+        - 안전 모드
+        - 혼합 모드
+        - 세 모드 모두
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 공식 MCP 설정 근거
+      description: 클라이언트 공식 문서 링크와 최소 설정 형태를 적어 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 기대하는 사용자 흐름
+      description: 설치, 설정 병합, 실행 확인 순서를 적어 주세요.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: 안전 기준
+      options:
+        - label: 예제에 토큰·개인 경로·프로필 값을 넣지 않습니다.
+          required: true
+        - label: 혼합 모드를 자동 라우터처럼 설명하지 않습니다.
+          required: true

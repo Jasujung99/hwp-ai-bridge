@@ -1,0 +1,65 @@
+name: 허브 문서·설정 결함
+description: HWP AI Bridge의 문서, 링크 또는 MCP 설정 예제에서 재현되는 문제를 신고합니다.
+title: "[Hub bug] "
+labels:
+  - "bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        실제 문서, 개인정보, 토큰, 사용자 이름과 절대 경로를 첨부하지 마세요.
+        한글 편집 엔진 자체의 문제는 아래 엔진 저장소에 신고해야 합니다.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 문제 영역
+      options:
+        - Codex 설정 예제
+        - Claude Code 설정 예제
+        - Cursor 설정 예제
+        - Grok Build 설정 예제
+        - 설치·모드·호환성 문서
+        - 저장소 자동 검사
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 최소 재현 절차
+      description: 민감정보를 제거하고, 어떤 예제와 명령을 사용했는지 단계별로 적어 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 결과
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 환경
+      description: Windows, AI 클라이언트, Python, 사용한 엔진 버전만 적고 PC명·경로는 제외하세요.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 공개 정보 확인
+      options:
+        - label: 실제 문서·개인정보·토큰·개인 경로를 제거했습니다.
+          required: true
+        - label: 이 문제가 hwpctl 또는 hwp-live-safe 엔진 자체의 결함이 아님을 확인했습니다.
+          required: true

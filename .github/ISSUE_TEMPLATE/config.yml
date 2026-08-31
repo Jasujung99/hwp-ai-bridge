@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 사용법·조합·아이디어
+    url: https://github.com/Jasujung99/hwp-ai-bridge/discussions
+    about: 일반 질문과 작업 방식 제안은 Discussions를 이용해 주세요.
+  - name: hwpctl 엔진 문제
+    url: https://github.com/Jasujung99/hwpctl/issues
+    about: 열린 한글 문서 직접 편집 엔진의 재현 가능한 결함을 신고합니다.
+  - name: hwp-live-safe 엔진 문제
+    url: https://github.com/Jasujung99/hwp-live-safe/issues
+    about: 안전 편집 엔진의 재현 가능한 결함을 신고합니다.
+  - name: 비공개 보안 신고
+    url: https://github.com/Jasujung99/hwp-ai-bridge/security/advisories/new
+    about: 취약점·개인정보·토큰 노출 가능성은 공개 Issue에 올리지 마세요.

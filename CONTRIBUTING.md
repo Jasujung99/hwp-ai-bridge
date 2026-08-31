@@ -3,6 +3,11 @@
 이 저장소는 여러 한글 편집 엔진과 AI 클라이언트를 연결하는 문서·설정 허브입니다.
 엔진별 자동화 코드의 변경은 각 엔진 저장소에서 제안해 주세요.
 
+- 사용법·조합·로드맵 아이디어: [Discussions](https://github.com/Jasujung99/hwp-ai-bridge/discussions)
+- 직접 편집 엔진 결함: [`hwpctl` Issues](https://github.com/Jasujung99/hwpctl/issues)
+- 안전 편집 엔진 결함: [`hwp-live-safe` Issues](https://github.com/Jasujung99/hwp-live-safe/issues)
+- 허브 문서·설정 결함: [HWP AI Bridge Issues](https://github.com/Jasujung99/hwp-ai-bridge/issues)
+
 ## 제안하기 전에
 
 - 실제 한글 문서, 이력서, 개인정보, API 키, 토큰, 사용자 이름과 절대 경로를 포함하지 마세요.
@@ -25,6 +30,7 @@
 
 ```powershell
 .\scripts\Test-IntegrationExamples.ps1
+python .\scripts\validate_repository.py
 git diff --check
 ```
 

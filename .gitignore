@@ -15,6 +15,10 @@ config.toml
 .env
 .env.*
 *.token
+*.pem
+*.pfx
+*.key
+secrets/
 profiles/
 private/
 
@@ -24,6 +28,7 @@ htmlcov/
 dist/
 build/
 .pytest_cache/
+*.log
 
 # Windows
 Thumbs.db

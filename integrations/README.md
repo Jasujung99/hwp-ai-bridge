@@ -19,3 +19,8 @@
 - 직접 모드에서는 `HWPCTL_CLIENT` 값이 잠금 관련 진단에만 쓰입니다.
 
 연결 절차는 [클라이언트 연결 문서](../docs/client-setup.md)를 참고하세요.
+
+엔진 저장소:
+
+- 직접 모드: [`Jasujung99/hwpctl`](https://github.com/Jasujung99/hwpctl)
+- 안전 모드: [`Jasujung99/hwp-live-safe`](https://github.com/Jasujung99/hwp-live-safe)
