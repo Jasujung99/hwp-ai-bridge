@@ -21,9 +21,9 @@
 
 - [x] 두 엔진의 공개 URL과 버전 호환표 형식을 추가
 - [ ] Codex·Claude Code·Cursor·Grok Build 예제를 각각 확인
-- [ ] 예제에서 토큰·개인 경로·프로필·사용자 이름이 없는지 검사
+- [ ] 예제에서 토큰·모든 드라이브 절대 경로·UNC 경로·프로필·사용자 이름이 없는지 검사
 - [ ] 직접·안전·혼합 모드의 실제 범위를 명확히 표시
-- [ ] `python scripts/validate_repository.py`, `scripts/Test-IntegrationExamples.ps1`, `git diff --check` 통과
+- [ ] validator 단위 테스트, `python scripts/validate_repository.py`, `scripts/Test-IntegrationExamples.ps1`, `git diff --check` 통과
 - [ ] GitHub Discussions와 private vulnerability reporting 활성화
 - [ ] `main` 브랜치 규칙과 필수 `Public baseline / validate` 검사 적용
 

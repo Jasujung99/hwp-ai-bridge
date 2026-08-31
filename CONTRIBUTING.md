@@ -10,7 +10,7 @@
 
 ## 제안하기 전에
 
-- 실제 한글 문서, 이력서, 개인정보, API 키, 토큰, 사용자 이름과 절대 경로를 포함하지 마세요.
+- 실제 한글 문서, 이력서, 개인정보, API 키, 토큰, 사용자 이름과 절대 경로를 포함하지 마세요. 모든 드라이브 문자 기반 절대 경로와 UNC 네트워크 경로도 금지합니다.
 - 새 설정 예제는 `command`를 PATH에서 실행 가능한 명령으로 작성하세요. 사용자 홈 폴더를 포함한 개인 절대 경로를 넣지 않습니다.
 - 한 클라이언트의 형식을 다른 클라이언트에 복사하기 전, 해당 클라이언트의 최신 MCP 설정 규격을 확인하세요.
 - “지원”이라고 쓰기 전에는 Windows + 한글 2022에서 재현 가능한 검증 절차를 함께 제시하세요.
@@ -29,6 +29,7 @@
 문서 또는 설정 예제를 바꿨다면 다음을 실행하세요.
 
 ```powershell
+python -m unittest discover -s tests -p "test_*.py"
 .\scripts\Test-IntegrationExamples.ps1
 python .\scripts\validate_repository.py
 git diff --check

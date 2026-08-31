@@ -55,9 +55,11 @@ def validate_toml_examples() -> int:
 
 
 SENSITIVE_PATTERNS = {
-    "personal Windows user path": re.compile(r"(?i)\b[A-Z]:\\Users\\[^\\\s]+\\"),
-    "personal Windows drive path": re.compile(
-        r"(?i)(?<![A-Za-z0-9])(?:D|E|F):\\(?!\\)[^\s`]+"
+    "Windows drive-absolute path": re.compile(
+        r"(?i)(?<![A-Za-z0-9])[A-Z]:[\\/]"
+    ),
+    "Windows UNC path": re.compile(
+        r"(?<![A-Za-z0-9:/\\])[\\/]{2}(?![.?\\/])"
     ),
     "Windows PC name": re.compile(r"(?i)\bDESKTOP-[A-Z0-9]{5,}\b"),
     "OpenAI-style secret": re.compile(r"\bsk-[A-Za-z0-9_-]{16,}\b"),
@@ -87,6 +89,16 @@ def public_text_files() -> list[Path]:
         if path.suffix.lower() in TEXT_SUFFIXES or path.name in {"CODEOWNERS", "LICENSE"}:
             files.append(path)
     return sorted(files)
+
+
+def detected_sensitive_labels(content: str) -> set[str]:
+    """Return the public-repository policy labels matched by *content*."""
+
+    return {
+        label
+        for label, pattern in SENSITIVE_PATTERNS.items()
+        if pattern.search(content)
+    }
 
 
 def validate_sensitive_content() -> int:
