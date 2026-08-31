@@ -2,6 +2,9 @@
 
 [![Public baseline](https://github.com/Jasujung99/hwp-ai-bridge/actions/workflows/public-baseline.yml/badge.svg)](https://github.com/Jasujung99/hwp-ai-bridge/actions/workflows/public-baseline.yml)
 
+[Discussions](https://github.com/Jasujung99/hwp-ai-bridge/discussions) ·
+[Changelog](CHANGELOG.md) · [Security](SECURITY.md)
+
 한글 2022를 AI 코딩 도구와 함께 쓰기 위한 **사용자 선택형 연결 허브**입니다.
 한글을 직접 제어하는 엔진을 복제하지 않고, 사용자가 원하는 편집 방식과 AI
 클라이언트를 골라 연결할 수 있도록 설명서와 검증된 설정 예제를 제공합니다.
