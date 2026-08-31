@@ -1,0 +1,5 @@
+# 기존 .grok/config.toml 또는 ~/.grok/config.toml에 병합하세요.
+
+[mcp_servers.hwp-live-safe]
+command = "hwp-live-safe"
+args = []

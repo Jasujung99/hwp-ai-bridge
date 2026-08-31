@@ -1,0 +1,8 @@
+# 기존 ~/.codex/config.toml에 병합하세요.
+
+[mcp_servers.hwpctl]
+command = "hwpctl"
+args = ["mcp"]
+
+[mcp_servers.hwpctl.env]
+HWPCTL_CLIENT = "codex"

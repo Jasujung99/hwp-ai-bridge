@@ -1,0 +1,5 @@
+# 기존 ~/.codex/config.toml에 병합하세요.
+
+[mcp_servers.hwp_live_safe]
+command = "hwp-live-safe"
+args = []

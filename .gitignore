@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local editor and MCP state
+.codex/
+.cursor/
+.claude/
+.grok/
+.mcp.json
+config.toml
+
+# Local secrets and personal data
+.env
+.env.*
+*.token
+profiles/
+private/
+
+# Build/test output
+coverage/
+htmlcov/
+dist/
+build/
+.pytest_cache/
+
+# Windows
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,13 @@
+# 기존 ~/.codex/config.toml에 병합하세요.
+# 현재 혼합 모드는 두 서버를 함께 등록하는 방식이며, 공용 라우터는 아직 없습니다.
+
+[mcp_servers.hwpctl]
+command = "hwpctl"
+args = ["mcp"]
+
+[mcp_servers.hwpctl.env]
+HWPCTL_CLIENT = "codex"
+
+[mcp_servers.hwp_live_safe]
+command = "hwp-live-safe"
+args = []

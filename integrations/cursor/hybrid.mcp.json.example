@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "hwpctl": {
+      "command": "hwpctl",
+      "args": ["mcp"],
+      "env": {
+        "HWPCTL_CLIENT": "cursor"
+      }
+    },
+    "hwp-live-safe": {
+      "command": "hwp-live-safe",
+      "args": []
+    }
+  }
+}
