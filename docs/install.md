@@ -24,26 +24,21 @@ hwpctl status
 공개 패키지 릴리스 전에는 `pipx install`이나 `uv tool install` 명령을 배포용 설치법으로
 안내하지 않습니다. 태그된 릴리스와 설치 경로가 준비된 뒤에만 추가합니다.
 
-## 안전 모드 저장소 설치
+## 안전 모드 태그된 소스 설치
 
-`hwp-live-safe`는 아직 공개 패키지 릴리스 전입니다. 공개 저장소 체크아웃의 독립
-가상환경에서 실행합니다.
+`hwp-live-safe`는 [GitHub pre-release `v0.3.0-rc.1`](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1)의
+태그된 소스를 독립 환경에 설치합니다.
 
 ```powershell
-git clone https://github.com/Jasujung99/hwp-live-safe.git
+git clone --branch v0.3.0-rc.1 --depth 1 https://github.com/Jasujung99/hwp-live-safe.git
 Set-Location hwp-live-safe
-uv sync --extra dev
-uv run hwp-live-safe
-```
-
-첫 공개 릴리스 이후 권장 설치는 다음처럼 PATH에 명령을 설치하는 방식입니다.
-
-```powershell
-uv tool install hwp-live-safe
+uv tool install .
 hwp-live-safe
 ```
 
-이 명령은 태그된 패키지 릴리스가 실제로 공개된 뒤에만 사용하세요.
+개발·테스트에만 `uv sync --extra dev`를 사용합니다. 초기 배포 단계에서는 PyPI
+배포를 하지 않으므로 `uv tool install hwp-live-safe`나 `pip install hwp-live-safe`처럼
+패키지 이름만으로 설치하지 않습니다.
 
 ## 둘 다 설치하기
 

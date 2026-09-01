@@ -16,9 +16,13 @@
 
 | 날짜 | Windows | 한글 빌드 | Python | `pyhwpx` | AI 클라이언트 | 엔진 버전 | 결과 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 미기록 | — | — | — | — | — | — | 공개 릴리스 전 실기 결과 필요 |
+| 2026-09-02 | Windows 10 Home 22H2 `22621.4317` | Hancom Office 2022 `12.0.0.850` | `3.12.13` | 해당 없음 — native COM worker | Codex CLI `0.147.0` / MCP Python SDK `2.1.1` | [`hwp-live-safe v0.3.0-rc.1`](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1); tagged source checkout + `uv tool install .` | native safe-mode manual gate 기록: 새 문서, text/table preview·apply·read-back, 더미 프로필, stale 거부, 안전 Undo, 짧은 foreground 입력; 금지된 파일 작업 도구 없음 |
 
-## 실기 검증이 필요한 항목
+위 기록은 `hwp-live-safe`의 native safe mode와 별도로 범위를 제한한 foreground
+입력에만 적용됩니다. 기존 열린 문서를 다루는 `hwpctl` 직접 모드와 두 엔진을 함께
+쓰는 혼합 모드의 일반 호환성을 뜻하지 않습니다.
+
+## 추가 실기 검증이 필요한 항목
 
 한글의 설치 방식과 열린 창 상태는 PC마다 다를 수 있습니다. 다음은 배포 전에 실제
 한글 2022 환경에서 확인해야 합니다.
