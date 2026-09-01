@@ -59,18 +59,19 @@ py -m pip install -e ".[windows]"
 hwpctl status
 ```
 
-안전 모드(공개 패키지 릴리스 전 저장소 설치):
+안전 모드([`v0.3.0-rc.1` GitHub pre-release](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1)의 태그된 소스 설치):
 
 ```powershell
-git clone https://github.com/Jasujung99/hwp-live-safe.git
+git clone --branch v0.3.0-rc.1 --depth 1 https://github.com/Jasujung99/hwp-live-safe.git
 Set-Location hwp-live-safe
-uv sync --extra dev
-uv run hwp-live-safe
+uv tool install .
+hwp-live-safe
 ```
 
 두 엔진은 MCP SDK 주 버전이 다를 수 있으므로 서로 독립된 가상환경에 설치합니다.
-태그된 릴리스 전에는 PyPI나 `uv tool install hwp-live-safe`를 배포 경로로 가정하지
-않습니다. 전체 절차는 [설치 안내](docs/install.md)를 보세요.
+`hwp-live-safe`는 PyPI에 배포하지 않으므로 `uv tool install hwp-live-safe`나
+`pip install hwp-live-safe`를 사용하지 않습니다. 전체 절차는
+[설치 안내](docs/install.md)를 보세요.
 
 ### 2. AI 클라이언트 연결
 
@@ -94,7 +95,7 @@ uv run hwp-live-safe
 | --- | --- |
 | Codex·Claude Code·Cursor·Grok Build용 stdio MCP 설정 | 제공 |
 | 열린 한글 문서 직접 편집 | `hwpctl` 제공, 실기 검증 범위 확대 중 |
-| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | `hwp-live-safe` 제공, pre-release 준비 중 |
+| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | [`hwp-live-safe v0.3.0-rc.1` pre-release](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1) — 호환성 표에 기록된 native safe-mode 범위 |
 | 두 MCP를 등록해 작업마다 선택하는 혼합 모드 | 제공 |
 | 문서 자동 전달·공용 잠금·공용 Undo 라우터 | 미구현, 로드맵 `0.3` |
 | 엔진별 독립 환경을 만드는 Windows 설치기 | 미구현, 로드맵 `0.2` |

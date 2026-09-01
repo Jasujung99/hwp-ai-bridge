@@ -15,6 +15,10 @@
 클라이언트의 설정 파일에 경로를 직접 넣기보다, 엔진의 개발용 실행 안내를 따르거나
 배포용 설치를 완료한 뒤 연결하는 편이 안전합니다.
 
+안전 모드 예제는 `hwp-live-safe v0.3.0-rc.1`의 태그된 소스 체크아웃을 `uv tool install .`
+으로 설치해 `hwp-live-safe` 명령이 PATH에 있는 상태를 전제로 합니다. PyPI 패키지 설치를
+전제로 하지 않습니다.
+
 ## Codex
 
 [`integrations/codex`](../integrations/codex)의 선택한 `.toml` 내용을 기존

@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+- No unreleased changes.
+
+## 0.1.0 — 2026-09-02
+
+- Recorded the verified Hancom Office 2022 native safe-mode environment for
+  [`hwp-live-safe v0.3.0-rc.1`](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1).
+- Linked the safe-engine pre-release and clarified that its initial
+  distribution is a tagged GitHub source checkout, not PyPI.
+- Released the documentation and configuration hub without expanding the
+  separately scoped `hwpctl` direct-mode or hybrid-mode support claims.
 - Published the `hwpctl` direct-mode and `hwp-live-safe` safe-mode selection
   guide with Codex, Claude Code, Cursor, and Grok Build examples.
 - Added direct, safe, and hybrid architecture diagrams and made the absence of
@@ -13,6 +23,7 @@
 
 ## Release policy
 
-The first tagged hub release will be `v0.1.0`. It remains blocked until the
-real Hancom 2022 results are recorded in `docs/compatibility.md`. The hub uses
-independent Semantic Versioning and is not published to a package registry.
+HWP AI Bridge versions its documentation and configuration hub independently.
+`v0.1.0` is distributed through its GitHub Release; this repository does not
+publish a package to PyPI. Engine versions, installation methods, and verified
+combinations remain independent and are recorded in `docs/compatibility.md`.
