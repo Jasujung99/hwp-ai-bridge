@@ -17,6 +17,14 @@
 | 날짜 | Windows | 한글 빌드 | Python | `pyhwpx` | AI 클라이언트 | 엔진 버전 | 결과 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-09-02 | Windows 10 Home 22H2 `22621.4317` | Hancom Office 2022 `12.0.0.850` | `3.12.13` | 해당 없음 — native COM worker | Codex CLI `0.147.0` / MCP Python SDK `2.1.1` | [`hwp-live-safe v0.3.0-rc.1`](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1); tagged source checkout + `uv tool install .` | native safe-mode manual gate 기록: 새 문서, text/table preview·apply·read-back, 더미 프로필, stale 거부, 안전 Undo, 짧은 foreground 입력; 금지된 파일 작업 도구 없음 |
+| 2026-09-03 | 동일 기록 환경 | 동일 | 동일 | 해당 없음 — native COM worker | Codex 로컬 MCP | [`hwp-live-safe main 384f84e`](https://github.com/Jasujung99/hwp-live-safe/commit/384f84ea811f992a9f9db268f15ce86262cf5b31) | 기존 한글 프로세스와 공존하면서 새 빈 문서 소유권, 서식 복원, 표 밖 본문, 제한 Undo 실기 통과; 워커 timeout은 모의 테스트. `HWP_LIVE_SAFE_STRICT_ISOLATION=1`이면 기존처럼 다른 한글 프로세스 존재 시 시작 거부 |
+
+### 안전 엔진 버전 차이
+
+| 기준 | 다른 한글 창과 공존 | 안전 수정 #10–#15 | PowerShell 선택 |
+| --- | --- | --- | --- |
+| `v0.3.0-rc.1` (`19fe220`) | 불가 — 시작 전 모든 한글 창을 닫아야 함 | 미포함 | 기록된 32-bit worker 고정 |
+| `main` 검증 커밋 `384f84e` | 새 COM 인스턴스의 빈 문서·고유 창 소유권을 확인한 뒤 가능 | 포함 | 자동 탐색 또는 `HWP_LIVE_POWERSHELL_PATH`; 엄격 격리는 `HWP_LIVE_SAFE_STRICT_ISOLATION=1` |
 
 위 기록은 `hwp-live-safe`의 native safe mode와 별도로 범위를 제한한 foreground
 입력에만 적용됩니다. 기존 열린 문서를 다루는 `hwpctl` 직접 모드와 두 엔진을 함께

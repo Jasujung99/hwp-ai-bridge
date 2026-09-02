@@ -20,7 +20,7 @@
 이 허브에서 환영하는 변경은 다음과 같습니다.
 
 - 설치·보안·호환성 문서 개선
-- Codex, Claude Code, Cursor, Grok Build 등의 설정 예제
+- Codex, Claude Code, Cursor, Grok Build, Gemini CLI 등의 설정 예제
 - 개인정보 없는 예제 작업 흐름
 - 공개 전 점검과 실기 검증 기록
 

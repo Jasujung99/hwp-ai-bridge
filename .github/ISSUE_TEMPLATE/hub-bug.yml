@@ -19,6 +19,7 @@ body:
         - Claude Code 설정 예제
         - Cursor 설정 예제
         - Grok Build 설정 예제
+        - Gemini CLI 설정 예제
         - 설치·모드·호환성 문서
         - 저장소 자동 검사
     validations:

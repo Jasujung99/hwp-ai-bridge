@@ -2,7 +2,15 @@
 
 ## Unreleased
 
-- No unreleased changes.
+- Documented the behavioral boundary between `hwp-live-safe v0.3.0-rc.1` and
+  the coexistence/safety fixes in main commit `384f84e`.
+- Added concrete hybrid-mode rebinding, close, restart, and cross-engine Undo
+  rules for `hwpctl` and `hwp-live-safe`.
+- Aligned Codex safe-mode approval, timeout, and UTF-8 settings with the engine
+  example and made TOML server naming consistent.
+- Replaced the global editable `hwpctl` install with isolated source-checkout
+  `uv tool` installation guidance for both engines.
+- Added Gemini CLI direct, safe, and hybrid examples plus validation coverage.
 
 ## 0.1.0 — 2026-09-02
 

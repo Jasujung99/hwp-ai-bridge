@@ -5,7 +5,7 @@ GitHub Milestone 제목은 간결하게 `0.1`, `0.2`, `0.3`으로 관리합니�
 
 ## `0.1 Public Hub`
 
-- 네 클라이언트의 direct/safe/hybrid 설정 예제가 자동 검사를 통과한다.
+- 다섯 클라이언트의 direct/safe/hybrid 설정 예제가 자동 검사를 통과한다.
 - 두 엔진의 실제 공개 URL, 설치법, 책임 경계가 README와 아키텍처 문서에서 일치한다.
 - 혼합 모드가 순차 선택 방식이며 자동 전달·공용 잠금·공용 Undo가 없음을 명시한다.
 - Discussions, 엔진별 Issues, 비공개 보안 신고의 라우팅이 연결된다.
@@ -15,7 +15,7 @@ GitHub Milestone 제목은 간결하게 `0.1`, `0.2`, `0.3`으로 관리합니�
 
 - direct/safe/both 선택 설치와 제거를 지원한다.
 - 두 엔진을 별도 환경에 설치하고 각 실행 명령을 독립적으로 검사한다.
-- Codex, Claude Code, Cursor, Grok Build의 기존 설정을 백업·병합·복구한다.
+- Codex, Claude Code, Cursor, Grok Build, Gemini CLI의 기존 설정을 백업·병합·복구한다.
 - 부분 실패와 재실행이 기존 설정 또는 문서를 손상시키지 않는다.
 - 로그와 진단 자료에 토큰·프로필·문서 본문이 남지 않는다.
 

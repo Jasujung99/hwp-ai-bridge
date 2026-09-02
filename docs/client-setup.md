@@ -15,9 +15,9 @@
 클라이언트의 설정 파일에 경로를 직접 넣기보다, 엔진의 개발용 실행 안내를 따르거나
 배포용 설치를 완료한 뒤 연결하는 편이 안전합니다.
 
-안전 모드 예제는 `hwp-live-safe v0.3.0-rc.1`의 태그된 소스 체크아웃을 `uv tool install .`
-으로 설치해 `hwp-live-safe` 명령이 PATH에 있는 상태를 전제로 합니다. PyPI 패키지 설치를
-전제로 하지 않습니다.
+안전 모드 예제는 [설치 안내](install.md)의 검증 커밋 소스 체크아웃을
+`uv tool install .`으로 설치해 `hwp-live-safe` 명령이 PATH에 있는 상태를 전제로
+합니다. PyPI 패키지 설치를 전제로 하지 않습니다.
 
 ## Codex
 
@@ -44,12 +44,22 @@ Grok Build는 `.mcp.json`도 호환 형식으로 읽을 수 있지만, 이 허�
 형식을 기본 예제로 사용합니다. 로컬에서 실행되는 Grok Build/CLI는 stdio 명령과
 `localhost`에 직접 접근할 수 있으므로, 이 구성에는 터널이 필요 없습니다.
 
+## Gemini CLI
+
+[`integrations/gemini`](../integrations/gemini)의 선택한 JSON에서 `mcpServers` 항목을
+Gemini CLI의 `~/.gemini/settings.json`에 병합합니다. 직접 모드 예제는
+`HWPCTL_CLIENT=gemini`를 포함하며, safe와 hybrid 예제도 동일한 로컬 stdio 명령을
+사용합니다.
+
 웹에서만 작동하는 원격 AI에 한글을 연결하려는 경우는 별도 보안 설계가 필요합니다.
 기본 예제는 외부 네트워크 노출을 만들지 않습니다.
 
 ## 실행 전 확인
 
-- 직접 모드: 한글을 열고 `hwpctl status`를 먼저 실행합니다.
+- 직접 모드: 대상 한글 문서를 활성화한 뒤 `hwpctl open`으로 창을 재고정하고,
+  `hwpctl status`의 `window_title`/`path`를 확인합니다. 한글을 재시작했거나 고정 오류가
+  난 뒤에는 이 절차를 다시 수행합니다.
 - 안전 모드: `hwp-live-safe`가 보이는 새 문서를 열 수 있는지 확인합니다.
-- 혼합 모드: 한 번에 한 엔진만 한글을 수정하도록 AI에게 명시합니다.
+- 혼합 모드: `hwp-live-safe v0.3.0-rc.1`은 열린 한글 창과 공존하지 못하므로 사용하지
+  않습니다. 검증 커밋 `384f84e` 이상에서 한 번에 한 엔진만 수정하도록 명시합니다.
 - 중요한 변경: AI가 적용 전에 범위와 변경 내용을 보여 주도록 요청합니다.

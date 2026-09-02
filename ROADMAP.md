@@ -6,7 +6,7 @@ HWP AI Bridge는 엔진을 하나로 합치는 프로젝트가 아니라, 독립
 
 ## 0.1 — 문서·설정·호환성 허브
 
-- Codex, Claude Code, Cursor, Grok Build용 direct/safe/hybrid 설정 예제
+- Codex, Claude Code, Cursor, Grok Build, Gemini CLI용 direct/safe/hybrid 설정 예제
 - 서로 다른 문서 소유 모델과 혼합 모드의 현재 경계 문서화
 - Windows CI에서 설정 구문, 로컬 링크, Mermaid 블록, 민감정보 패턴 검사
 - 한글 2022 실기 결과를 기록할 호환성 표와 릴리스 게이트

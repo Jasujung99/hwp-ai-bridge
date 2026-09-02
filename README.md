@@ -16,7 +16,7 @@
 
 ```mermaid
 flowchart TB
-    U["사용자"] --> C["선호하는 AI 클라이언트<br/>Codex · Claude Code · Cursor · Grok Build"]
+    U["사용자"] --> C["선호하는 AI 클라이언트<br/>Codex · Claude Code · Cursor · Grok Build · Gemini CLI"]
     C --> M{"작업마다 모드 선택"}
 
     M -->|"직접 모드"| D["hwpctl MCP<br/>열린 문서 직접 편집"]
@@ -55,15 +55,19 @@ flowchart TB
 ```powershell
 git clone https://github.com/Jasujung99/hwpctl.git
 Set-Location hwpctl
-py -m pip install -e ".[windows]"
-hwpctl status
+uv tool install ".[windows]"
+hwpctl --help
 ```
 
-안전 모드([`v0.3.0-rc.1` GitHub pre-release](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1)의 태그된 소스 설치):
+실제 문서에 연결할 때는 대상 창을 먼저 활성화하고 `hwpctl open`으로 재고정한 뒤
+`hwpctl status`의 창 제목과 경로를 확인합니다.
+
+안전 모드(혼합 모드와 #10–#15 안전 수정이 포함된 검증 커밋 설치):
 
 ```powershell
-git clone --branch v0.3.0-rc.1 --depth 1 https://github.com/Jasujung99/hwp-live-safe.git
+git clone https://github.com/Jasujung99/hwp-live-safe.git
 Set-Location hwp-live-safe
+git checkout 384f84e
 uv tool install .
 hwp-live-safe
 ```
@@ -84,6 +88,7 @@ hwp-live-safe
 | Claude Code | [integrations/claude-code](integrations/claude-code) |
 | Cursor | [integrations/cursor](integrations/cursor) |
 | Grok Build / 로컬 CLI | [integrations/grok-build](integrations/grok-build) |
+| Gemini CLI | [integrations/gemini](integrations/gemini) |
 
 모든 예제는 같은 PC에서 실행하는 stdio MCP 구성이고, 개인 경로·토큰·프로필 값이
 포함되지 않습니다. [클라이언트별 연결 절차](docs/client-setup.md)에서 설정 위치와
@@ -93,9 +98,9 @@ hwp-live-safe
 
 | 항목 | 상태 |
 | --- | --- |
-| Codex·Claude Code·Cursor·Grok Build용 stdio MCP 설정 | 제공 |
+| Codex·Claude Code·Cursor·Grok Build·Gemini CLI용 stdio MCP 설정 | 제공 |
 | 열린 한글 문서 직접 편집 | `hwpctl` 제공, 실기 검증 범위 확대 중 |
-| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | [`hwp-live-safe v0.3.0-rc.1` pre-release](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1) — 호환성 표에 기록된 native safe-mode 범위 |
+| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | `hwp-live-safe` 검증 커밋 `384f84e`; `v0.3.0-rc.1`과의 차이는 호환성 표에 별도 기록 |
 | 두 MCP를 등록해 작업마다 선택하는 혼합 모드 | 제공 |
 | 문서 자동 전달·공용 잠금·공용 Undo 라우터 | 미구현, 로드맵 `0.3` |
 | 엔진별 독립 환경을 만드는 Windows 설치기 | 미구현, 로드맵 `0.2` |
