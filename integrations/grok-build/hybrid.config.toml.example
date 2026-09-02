@@ -8,6 +8,7 @@ args = ["mcp"]
 [mcp_servers.hwpctl.env]
 HWPCTL_CLIENT = "grok-build"
 
-[mcp_servers.hwp-live-safe]
+[mcp_servers.hwp_live_safe]
 command = "hwp-live-safe"
 args = []
+startup_timeout_sec = 30

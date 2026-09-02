@@ -12,10 +12,56 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 INTEGRATIONS = ROOT / "integrations"
+REQUIRED_CLIENTS = ("claude-code", "codex", "cursor", "gemini", "grok-build")
+REQUIRED_MODES = ("direct", "safe", "hybrid")
 
 
 def fail(message: str) -> None:
     raise ValueError(message)
+
+
+def validate_safe_server(
+    path: Path, name: str, server: dict[str, object], *, toml: bool
+) -> None:
+    """Keep hub examples aligned with the safe engine's distributed examples."""
+
+    if server.get("command") != "hwp-live-safe":
+        return
+    expected_name = "hwp_live_safe" if toml else "hwp-live-safe"
+    if name != expected_name:
+        fail(f"{path.relative_to(ROOT)}: safe server must be named {expected_name}")
+
+    relative_parts = path.relative_to(INTEGRATIONS).parts
+    if relative_parts[0] == "codex":
+        required = {
+            "startup_timeout_sec": 30,
+            "tool_timeout_sec": 90,
+            "enabled": True,
+            "default_tools_approval_mode": "prompt",
+        }
+        for key, expected in required.items():
+            if server.get(key) != expected:
+                fail(f"{path.relative_to(ROOT)}: safe server requires {key} = {expected!r}")
+        environment = server.get("env")
+        if not isinstance(environment, dict):
+            fail(f"{path.relative_to(ROOT)}: safe server requires an env table")
+        for key in ("PYTHONUTF8", "PYTHONDONTWRITEBYTECODE"):
+            if environment.get(key) != "1":
+                fail(f"{path.relative_to(ROOT)}: safe server requires {key} = '1'")
+    elif relative_parts[0] == "grok-build":
+        if server.get("startup_timeout_sec") != 30:
+            fail(f"{path.relative_to(ROOT)}: safe server requires startup_timeout_sec = 30")
+
+
+def validate_mode_matrix() -> None:
+    for client in REQUIRED_CLIENTS:
+        client_dir = INTEGRATIONS / client
+        if not client_dir.is_dir():
+            fail(f"Missing integration directory: integrations/{client}")
+        names = {path.name.split(".", 1)[0] for path in client_dir.glob("*.example")}
+        missing = set(REQUIRED_MODES) - names
+        if missing:
+            fail(f"integrations/{client}: missing modes: {', '.join(sorted(missing))}")
 
 
 def validate_json_examples() -> int:
@@ -33,6 +79,7 @@ def validate_json_examples() -> int:
                 fail(f"{path.relative_to(ROOT)}: {name} is missing a string command")
             if not isinstance(server.get("args", []), list):
                 fail(f"{path.relative_to(ROOT)}: {name}.args must be an array")
+            validate_safe_server(path, name, server, toml=False)
     return len(files)
 
 
@@ -51,6 +98,7 @@ def validate_toml_examples() -> int:
                 fail(f"{path.relative_to(ROOT)}: {name} is missing a string command")
             if not isinstance(server.get("args", []), list):
                 fail(f"{path.relative_to(ROOT)}: {name}.args must be an array")
+            validate_safe_server(path, name, server, toml=True)
     return len(files)
 
 
@@ -183,6 +231,7 @@ def validate_required_urls() -> None:
 
 def main() -> int:
     try:
+        validate_mode_matrix()
         json_count = validate_json_examples()
         toml_count = validate_toml_examples()
         scanned_count = validate_sensitive_content()

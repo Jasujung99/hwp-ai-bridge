@@ -10,6 +10,8 @@ scoped native safe-mode 결과를 [호환성 표](compatibility.md)에 추가했
 ## 1. `hwpctl` 직접 모드 공개
 
 - [x] README에서 개인 PC 이름, 절대 경로, 사용자명을 제거
+- [x] 최신 hwpctl 소스를 임시 uv tool 환경에 `.[windows]`로 설치하고 PATH용
+      `hwpctl --help` 진입점을 Windows에서 검증 (2026-09-03)
 - [ ] 실제 한글 2022에서 기존 창 연결과 기본 편집을 검증
   - 참고: `hwpctl` PR #15의 HWPX A4 세로 렌더링은 한글 2022에서 육안 확인됐다.
     이는 기존 창 연결·다중 창·Undo를 포함하는 위 직접 모드 게이트의 통과를 뜻하지 않는다.
@@ -24,14 +26,14 @@ scoped native safe-mode 결과를 [호환성 표](compatibility.md)에 추가했
 - [x] 개인 로컬 프로필과 예제 파일을 분리
 - [x] 미리보기·승인·문서 변경 감지의 행동을 자동 테스트
 - [x] 열기·저장·닫기·임의 액션을 제공하지 않는 기본값을 재확인
-- [x] 32비트 한글 2022 연결과 native safe-mode 수동 게이트를 실제 PC에서 검증
+- [x] `v0.3.0-rc.1` 당시 32-bit worker 연결과 native safe-mode 수동 게이트를 실제 PC에서 검증
   - 새 문서·본문·표·더미 프로필·stale preview·안전 Undo·짧은 foreground 입력과
     금지된 파일 작업 도구 부재를 [기록된 범위](compatibility.md)에서 확인.
 
 ## 3. 이 허브 공개
 
 - [x] 두 엔진의 공개 URL과 버전 호환표 형식을 추가
-- [x] Codex·Claude Code·Cursor·Grok Build 예제를 각각 확인
+- [x] Codex·Claude Code·Cursor·Grok Build·Gemini CLI 예제를 각각 확인
 - [x] 예제에서 토큰·모든 드라이브 절대 경로·UNC 경로·프로필·사용자 이름이 없는지 검사
 - [x] 직접·안전·혼합 모드의 실제 범위를 명확히 표시
 - [x] validator 단위 테스트, `python scripts/validate_repository.py`, `scripts/Test-IntegrationExamples.ps1`, `git diff --check` 통과

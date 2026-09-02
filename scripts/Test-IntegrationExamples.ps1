@@ -47,7 +47,7 @@ if ($crlfCommandProbe -notmatch $commandPattern) {
 foreach ($file in $tomlExamples) {
     $content = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     if ($content -notmatch '(?m)^\[mcp_servers\.') {
-        throw "$($file.FullName): missing Codex MCP table."
+        throw "$($file.FullName): missing MCP server table."
     }
     if ($content -notmatch $commandPattern) {
         throw "$($file.FullName): missing command entry."
