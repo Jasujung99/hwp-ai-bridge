@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added a version-scoped direct-mode edit-review workflow for hwpctl's explicit
+  formatting-mark command; preserved safe ownership/approval boundaries and
+  distinguished internal HWPX formatting inspection from public live editing.
+
 - Documented the behavioral boundary between `hwp-live-safe v0.3.0-rc.1` and
   the coexistence/safety fixes in main commit `384f84e`.
 - Added concrete hybrid-mode rebinding, close, restart, and cross-engine Undo
