@@ -5,9 +5,9 @@
 
 ## 기능 기준
 
-`set_edit_marks`는 hwpctl의 `sync/edit-marks-format-audit` 통합 브랜치,
-커밋 `d0f1141d05f5d3746d03106c9f8a9cc757e49d19`에 추가된 기능입니다.
-아직 출시 버전이나 기본 main 설치에 포함되었다고 가정하지 마세요.
+`set_edit_marks`는 hwpctl main의 커밋
+`d0f1141d05f5d3746d03106c9f8a9cc757e49d19`부터 포함된 기능입니다.
+이전 설치본이나 출시 패키지에도 포함되었다고 가정하지 마세요.
 설치된 서버의 도구 목록에 `set_edit_marks`가 있는지 먼저 확인합니다.
 
 ## 검토 순서
