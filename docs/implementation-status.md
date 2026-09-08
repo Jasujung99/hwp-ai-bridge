@@ -63,9 +63,11 @@ preview → revision 확인 → 승인된 apply, stale 거부, 제한 Undo 계�
 | 검증 | 격자 정확/정보 부족/모순 구분, 표/페이지/내보내기 회귀 | safe는 자기 계약의 별도 수동 게이트만 승격 |
 | 실행 관리 | 기존 Engine/HangulCanvas 및 격리 COM 소유권 | 세션·창·잠금·Undo·revision 공유 없음 |
 
-hwpctl 로컬 자동 회귀는 339 passed, 15 skipped다. 한/글 opt-in은 12 passed이나
-참조 export 종료에서 COM RPC `0x800706ba` 진단이 반복되어 깨끗한 종료 검증으로
-표시하지 않는다. PR의 검증 기록과 CI 결과를 확인하고, 구조 검사 성공을 시각 동일성으로
+hwpctl 로컬 자동 회귀는 339 passed, 15 skipped다. 최초 export 테스트에서 발생한
+COM RPC `0x800706ba` 진단은 종료된 creator proxy를 다음 세션 전에 해제하는
+테스트 수명주기 수정 후 재현되지 않았다. 같은 프로세스의 3회 연속 검사에서
+원본 보존·산출물과 native 진단 부재를 확인한다. PR의 검증 기록과 CI 결과를
+확인하고, 구조 검사 성공을 시각 동일성으로
 해석하지 않는다. 이 hub PR은 엔진 설치 버전이나 MCP 설정을 자동으로 바꾸지 않는다.
 
 FAQ 전체 작성 명세 변환, 복잡 병합·페이지 자동 조판, 형식별 생략/기본값 변환,
