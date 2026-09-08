@@ -1,5 +1,7 @@
 # HWP AI Bridge
 
+[현재 제공 기능·실험 상태·4계층 기준](docs/implementation-status.md)
+
 [![Public baseline](https://github.com/Jasujung99/hwp-ai-bridge/actions/workflows/public-baseline.yml/badge.svg)](https://github.com/Jasujung99/hwp-ai-bridge/actions/workflows/public-baseline.yml)
 
 [Discussions](https://github.com/Jasujung99/hwp-ai-bridge/discussions) ·
