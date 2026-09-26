@@ -18,6 +18,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2026-09-02 | Windows 10 Home 22H2 `22621.4317` | Hancom Office 2022 `12.0.0.850` | `3.12.13` | 해당 없음 — native COM worker | Codex CLI `0.147.0` / MCP Python SDK `2.1.1` | [`hwp-live-safe v0.3.0-rc.1`](https://github.com/Jasujung99/hwp-live-safe/releases/tag/v0.3.0-rc.1); tagged source checkout + `uv tool install .` | native safe-mode manual gate 기록: 새 문서, text/table preview·apply·read-back, 더미 프로필, stale 거부, 안전 Undo, 짧은 foreground 입력; 금지된 파일 작업 도구 없음 |
 | 2026-09-03 | 동일 기록 환경 | 동일 | 동일 | 해당 없음 — native COM worker | Codex 로컬 MCP | [`hwp-live-safe main 384f84e`](https://github.com/Jasujung99/hwp-live-safe/commit/384f84ea811f992a9f9db268f15ce86262cf5b31) | 기존 한글 프로세스와 공존하면서 새 빈 문서 소유권, 서식 복원, 표 밖 본문, 제한 Undo 실기 통과; 워커 timeout은 모의 테스트. `HWP_LIVE_SAFE_STRICT_ISOLATION=1`이면 기존처럼 다른 한글 프로세스 존재 시 시작 거부 |
+| 2026-09-26 | Windows (합성 native 검사) | Hancom Office 2022 (빌드 미기록) | 3.11/3.12 CI | 해당 없음 — native COM worker | MCP 합성 검증 | [`hwp-live-safe main db59417`](https://github.com/Jasujung99/hwp-live-safe/commit/db594178f3e8e625b71451bb555891d2727beca4) | 새 비저장 문서에서 preview·apply·Undo와 외부 변경 후 거부의 합성 native 계약 확인. 수동 화면 게이트는 실행하지 않음 |
 
 ### 안전 엔진 버전 차이
 
