@@ -35,14 +35,14 @@ PATH에 연결합니다. 패키지 이름만으로 레지스트리에서 설치�
 
 ## 안전 모드 소스 설치
 
-혼합 모드 공존과 안전 수정 #10–#15가 필요한 현재 권장 기준은 `hwp-live-safe`
-커밋 `384f84e`입니다. 새 태그가 나오기 전까지 재현 가능한 커밋을 고정해 독립 환경에
+혼합 모드 공존·소유 문서 식별·합성 native 검증을 포함한 현재 권장 기준은 `hwp-live-safe`
+main 커밋 `db59417`입니다. 새 태그가 나오기 전까지 재현 가능한 커밋을 고정해 독립 환경에
 설치합니다.
 
 ```powershell
 git clone https://github.com/Jasujung99/hwp-live-safe.git
 Set-Location hwp-live-safe
-git checkout 384f84e
+git checkout db59417
 uv tool install .
 hwp-live-safe
 ```

@@ -64,12 +64,12 @@ hwpctl --help
 실제 문서에 연결할 때는 대상 창을 먼저 활성화하고 `hwpctl open`으로 재고정한 뒤
 `hwpctl status`의 창 제목과 경로를 확인합니다.
 
-안전 모드(혼합 모드와 #10–#15 안전 수정이 포함된 검증 커밋 설치):
+안전 모드(소유 문서 식별과 합성 검증 게이트를 포함한 main 기준 커밋 설치):
 
 ```powershell
 git clone https://github.com/Jasujung99/hwp-live-safe.git
 Set-Location hwp-live-safe
-git checkout 384f84e
+git checkout db59417
 uv tool install .
 hwp-live-safe
 ```
@@ -102,7 +102,8 @@ hwp-live-safe
 | --- | --- |
 | Codex·Claude Code·Cursor·Grok Build·Gemini CLI용 stdio MCP 설정 | 제공 |
 | 열린 한글 문서 직접 편집 | `hwpctl` 제공, 실기 검증 범위 확대 중 |
-| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | `hwp-live-safe` 검증 커밋 `384f84e`; `v0.3.0-rc.1`과의 차이는 호환성 표에 별도 기록 |
+| 새 문서의 미리보기·승인·개인정보 로컬 삽입 | `hwp-live-safe` main `db59417`; `v0.3.0-rc.1`과의 차이는 호환성 표에 별도 기록 |
+| 순서 있는 명세 작성·참조 변환 | `hwpctl` main `4f8fe55`의 실험 기능; 네이티브 저장·재열기와 ChartML 보존은 미검증·미완료 |
 | 두 MCP를 등록해 작업마다 선택하는 혼합 모드 | 제공 |
 | 문서 자동 전달·공용 잠금·공용 Undo 라우터 | 미구현, 로드맵 `0.3` |
 | 엔진별 독립 환경을 만드는 Windows 설치기 | 미구현, 로드맵 `0.2` |

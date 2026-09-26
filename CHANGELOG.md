@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Linked hwpctl main `4f8fe55` experimental authoring/conversion commands,
+  the unfinished work in issue #25, and hwp-live-safe main `db59417` with its
+  synthetic native contract gates. Kept manual visual validation distinct.
+
 - Added a version-scoped direct-mode edit-review workflow for hwpctl's explicit
   formatting-mark command; preserved safe ownership/approval boundaries and
   distinguished internal HWPX formatting inspection from public live editing.
