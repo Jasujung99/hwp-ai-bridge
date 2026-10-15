@@ -7,13 +7,13 @@
 폴더 조사 후속 변경과 실험적 작성·변환 기반은
 [hwpctl PR #24](https://github.com/Jasujung99/hwpctl/pull/24)로 main에 병합됐다.
 기준 커밋은 [`4f8fe55`](https://github.com/Jasujung99/hwpctl/commit/4f8fe55714a723f26466cb75ba77cfb64ec38968)다.
-[main 작성·분석 안내](https://github.com/Jasujung99/hwpctl/blob/main/docs/HWPX_AUTHORING.md)와
-[후속 후보의 승격/보류 결과](https://github.com/Jasujung99/hwpctl/blob/main/docs/INTEGRATION_CANDIDATES.md)를
+[main 작성·분석 안내](https://github.com/Jasujung99/hwpctl/blob/main/docs/guide/hwpx-authoring.md)와
+[후속 후보의 승격/보류 결과](https://github.com/Jasujung99/hwpctl/blob/main/docs/dev/INTEGRATION_CANDIDATES.md)를
 기준으로 한다. 기존 대장은 모든 작업창의 개발을 포괄한다는 뜻이 아니다.
 
-`hwpctl`의 [통합 대장](https://github.com/Jasujung99/hwpctl/blob/main/docs/INTEGRATION_STATUS.md)이
+`hwpctl`의 [통합 대장](https://github.com/Jasujung99/hwpctl/blob/main/docs/dev/INTEGRATION_STATUS.md)이
 기능별 원본 커밋·기준 코드·공식 진입점·테스트·제한의 단일 기준이다.
-[검증 기록](https://github.com/Jasujung99/hwpctl/blob/main/docs/INTEGRATION_VERIFICATION.md)은
+[검증 기록](https://github.com/Jasujung99/hwpctl/blob/main/docs/dev/INTEGRATION_VERIFICATION.md)은
 자동 회귀와 한/글 실기, 시각 비교를 구분한다.
 
 | 범위 | 제공 상태 | 진입점·제한 |
